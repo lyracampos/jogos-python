@@ -8,6 +8,10 @@ class AdivinhacaoConfigs:
     @property
     def dificuldade(self):
         return self.__dificuldade
+    
+    @dificuldade.setter
+    def dificuldade(self, dificuldade):
+        self.__dificuldade = dificuldade
 
     @property
     def numero_secreto(self):
@@ -30,3 +34,6 @@ class AdivinhacaoConfigs:
             return 5
         else:
             return 0
+
+    def configuracoes_validas_para_iniciar(self):
+        return self.__dificuldade >= 1 and self.__dificuldade <= 3
